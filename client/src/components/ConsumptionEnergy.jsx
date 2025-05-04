@@ -9,18 +9,18 @@ const ConsumptionEnergy = () => {
 
   const handleSubmit = async () => {
     if (isNaN(consumption) || consumption <= 0) {
-      alert("Veuillez entrer une consommation valide");
+      alert("Please enter a valid consumption value");
       return;
     }
 
     setLoading(true);
 
     try {
-      await contract.methods.recordEnergy(0, consumption, "non spécifié").send({ from: accounts[0] });
-      alert("✅ Consommation enregistrée !");
+      await contract.methods.recordEnergy(0, consumption, "unspecified").send({ from: accounts[0] });
+      alert("✅ Consumption successfully recorded!");
     } catch (error) {
-      console.error("Erreur d'enregistrement", error);
-      alert("❌ Une erreur est survenue");
+      console.error("Error while recording", error);
+      alert("❌ An error occurred");
     }
 
     setLoading(false);
@@ -28,10 +28,10 @@ const ConsumptionEnergy = () => {
 
   return (
     <Paper elevation={4} sx={{ p: 3, my: 4, borderRadius: 4 }}>
-      <Typography variant="h5" gutterBottom>Module de Consommation d'Énergie</Typography>
+      <Typography variant="h5" gutterBottom>Energy Consumption Module</Typography>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
         <TextField
-          label="Consommation (W)"
+          label="Consumption (W)"
           variant="outlined"
           type="number"
           value={consumption}
@@ -39,7 +39,7 @@ const ConsumptionEnergy = () => {
           required
         />
         <Button variant="contained" color="primary" onClick={handleSubmit} disabled={loading}>
-          {loading ? "Enregistrement..." : "Enregistrer la consommation"}
+          {loading ? "Recording..." : "Record Consumption"}
         </Button>
       </Box>
     </Paper>
