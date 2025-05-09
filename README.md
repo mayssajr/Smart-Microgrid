@@ -1,39 +1,68 @@
-# React Truffle Box
+🌞 Smart Microgrid Project
+Ce projet implémente un microgrid hybride autonome combinant des sources d'énergie solaire et une gestion sécurisée via une blockchain. Le système est contrôlé par une carte STM32F769I-DISCO, communique avec un module ESP8266 pour l'interface web, et utilise React.js pour la visualisation en temps réel.
+📋 Table des Matières
+  1.Description du Projet
+  2.Structure des Répertoires
+  3.Exécution du Projet
 
-This box comes with everything you need to start using Truffle to write, compile, test, and deploy smart contracts, and interact with them from a React app.
+1.📝 Description du Projet
+Le projet vise à développer un microgrid autonome capable de :
 
-## Installation
+*Gérer la production et la consommation d'énergie solaire.
+*Enregistrer les transactions énergétiques sur une blockchain pour garantir traçabilité et sécurité.
+*Fournir une interface web locale pour visualiser les données en temps réel.
+*Utiliser des tags RFID pour authentifier les utilisateurs et gérer les accès.
 
-First ensure you are in an empty directory.
+2.📂 Structure des Répertoires
+Smart Microgrid/
+├── client/                   
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── AccessHistory.jsx
+│   │   │   ├── AdminPage.jsx
+│   │   │   ├── ConsumptionEnergy.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── EnergyAnalytics.jsx
+│   │   │   ├── EnergyStorage.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── ProductionEnergy.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   └── WelcomePage.jsx        
+│   │   ├── contexts/          
+│   │   ├── contracts/           
+│   │   ├── App.jsx              
+│   │   └── index.jsx            
+├── microgriServer/                   
+│   ├── main.cpp                
+├── STM32/                      
+│   ├── Smart_Microgrid/
+│   │   ├── main.c          
+│   │   └── Smart_Microgrid.ioc              
+├── truffle/                     
+│   ├── contracts/               
+│   │   └── EnergyRecords.sol    
+│   ├── migrations/              
+│   ├── test/                  
+│   └── truffle-config.js        
+├── package-lock.json            
+├── package.json                
 
-Run the `unbox` command using 1 of 2 ways.
 
-```sh
-# Install Truffle globally and run `truffle unbox`
-$ npm install -g truffle
-$ truffle unbox react
-```
+3.Exécution du Projet
+    1-Démarrage du STM32 :
+        Assurez-vous que le STM32 est connecté aux capteurs (courant, tension)
+        Vérifiez que les données sont transmises correctement à l'ESP8266 via UART.
+    2-Démarrage de l'ESP8266 :
+        Connectez l'ESP8266 à votre réseau Wi-Fi.
+        Vérifiez que le serveur web local fonctionne et que les endpoints (/data, /rfid) sont accessibles.
+    3-Déploiement de la Blockchain :
+        Assurez-vous que Ganache est en cours d'exécution.
+        Déployez le smart contract .
+    4-Lancement du Frontend :
+        Ouvrez l'interface React dans votre navigateur.
+        Connectez-vous à MetaMask pour interagir avec la blockchain.
+    5-Tests et Validation :
+        Lecture des données solaires énergétiques.
+        Authentification RFID.
+        Transactions énergétiques sur la blockchain.
 
-```sh
-# Alternatively, run `truffle unbox` via npx
-$ npx truffle unbox react
-```
-
-Start the react dev server.
-
-```sh
-$ cd client
-$ npm start
-```
-
-From there, follow the instructions on the hosted React app. It will walk you through using Truffle and Ganache to deploy the `SimpleStorage` contract, making calls to it, and sending transactions to change the contract's state.
-
-## FAQ
-
-- __How do I use this with Ganache (or any other network)?__
-
-  The Truffle project is set to deploy to Ganache by default. If you'd like to change this, it's as easy as modifying the Truffle config file! Check out [our documentation on adding network configurations](https://trufflesuite.com/docs/truffle/reference/configuration/#networks). From there, you can run `truffle migrate` pointed to another network, restart the React dev server, and see the change take place.
-
-- __Where can I find more resources?__
-
-  This Box is a sweet combo of [Truffle](https://trufflesuite.com) and [Webpack](https://webpack.js.org). Either one would be a great place to start!
