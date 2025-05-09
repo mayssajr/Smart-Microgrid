@@ -27,4 +27,16 @@ Le projet vise à développer un microgrid autonome capable de :
         Lecture des données solaires énergétiques.
         Authentification RFID.
         Transactions énergétiques sur la blockchain.
+        ![1](https://github.com/user-attachments/assets/4f61a66f-ff36-47f9-b167-fd6747e0bb24)
+        ![dashboard](https://github.com/user-attachments/assets/7f0198e0-7f30-4d47-a2e8-f4b306312822)
+        ![energycharts](https://github.com/user-attachments/assets/51ce5836-b38c-4f84-b726-24d814b266c0)
+        ![solarDataAdded](https://github.com/user-attachments/assets/dba0652d-fd98-489a-937c-938c041c395e)
+        ![solarDataChart](https://github.com/user-attachments/assets/c27dc0ba-89a8-4333-a14b-6a79e6141a7a)
+        ![energyBarchart](https://github.com/user-attachments/assets/9c9bb795-1335-4a98-8dec-d9dcdab3221b)
+        ![AdminAccess](https://github.com/user-attachments/assets/b6caef15-34c9-4ea4-8460-e36ad527e6fe)
+        ![notAdminRegistrationByAdmin](https://github.com/user-attachments/assets/1d8a1866-d5f6-413e-9699-72c1ae82f879)
+        ![notAdminConfirmed](https://github.com/user-attachments/assets/bc65042e-6c35-412a-b930-3b20020539e1)
+        ![connectedWallet](https://github.com/user-attachments/assets/e3a188a7-e016-4180-94b0-716898eaaa63)
+
+
 
